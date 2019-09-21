@@ -1,4 +1,4 @@
-const CACHE_NAME = "latihan2-v1.1";
+const CACHE_NAME = "latihan2-v1.2";
 var urlsToCache = [
     "/",
     "/icon.png",
@@ -42,16 +42,17 @@ self.addEventListener("fetch", function(event){
     }
 });
 
-self.addEventListener("activate", function(event){
+self.addEventListener("activate", function(event) {
     event.waitUntil(
-        caches.keys().then(function(cacheNames){
-            return Promise.all(
-                cacheNames.map(function(cacheName){
-                    if(cacheName != CACHE_NAME){
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
+        caches.keys().then(function(cacheNames) {
+          return Promise.all(
+              cacheNames.map(function(cacheName) {
+                if (cacheName != CACHE_NAME) {
+                    console.log("ServiceWorker: cache " + cacheName + " dihapus");
+                    return caches.delete(cacheName);
+                }
+              })
+          );
         })
-    ); 
+    );
 });
