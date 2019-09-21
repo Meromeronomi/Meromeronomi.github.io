@@ -1,4 +1,4 @@
-const CACHE_NAME = "latihan2-v1.0";
+const CACHE_NAME = "latihan2-v1.1";
 var urlsToCache = [
     "/",
     "/icon.png",
