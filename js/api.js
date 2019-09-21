@@ -73,7 +73,6 @@ function getArticles() {
 // untuk halaman detail article
 function getArticleById() {
     var urlParams = new URLSearchParams(window.location.search);
-    alert(urlParams);
     var idParam = urlParams.get("id");
 
     if("caches" in window) {
